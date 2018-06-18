@@ -1,0 +1,32 @@
+---
+- name: Creating Admin Groups for  projects
+  vars:
+    group_name: "{{ tenant_name|lower|replace('_', '-') }}-{{ item.name|lower|replace('_', '-') }}-admin"
+  ldap_entry:
+    dn: CN={{ group_name }},{{ group_dn }}
+    objectClass:
+    - group
+    - top
+    state: present
+    server_uri: {{ ldap_server_uri }}
+    bind_dn: {{ local_admin_dn }}
+    bind_pw: {{ local_admin_pwd }}
+  with_items:
+    - "{{ projects }}"
+
+- name: Creating Basic User Groups for projects
+  vars:
+    group_name: "{{ tenant_name|lower|replace('_', '-') }}-{{ item.name|lower|replace('_', '-') }}"
+  include_role:
+  ldap_entry:
+    dn: CN={{ group_name }},{{ group_dn }}
+    objectClass:
+    - group
+    - top
+    state: present
+    server_uri: {{ ldap_server_uri }}
+    bind_dn: {{ local_admin_dn }}
+    bind_pw: {{ local_admin_pwd }}
+  with_items:
+    - "{{ projects }}"
+...
