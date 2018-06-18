@@ -17,7 +17,6 @@
 - name: Creating Basic User Groups for projects
   vars:
     group_name: "{{ tenant_name|lower|replace('_', '-') }}-{{ item.name|lower|replace('_', '-') }}"
-  include_role:
   ldap_entry:
     dn: "CN={{ group_name }},{{ group_dn }}"
     objectClass:
