@@ -76,7 +76,6 @@ for example:
                - tester1@acme.com
                - tester2@acme.com
          - name: 'DEMO'
-             automation_server: yes
              admins:
                - demoAdmin@acme.com
              users:
@@ -112,7 +111,6 @@ for example:
             - tester1@acme.com
             - tester2@acme.com
       - name: 'DEMO'
-          automation_server: yes
           admins:
             - demoAdmin@acme.com
           users:
