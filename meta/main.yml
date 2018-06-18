@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  author: gatblau
+  description: manage OCP tenant users in LDAP server
+  license: Apache 2
+  min_ansible_version: 1.2
+...
