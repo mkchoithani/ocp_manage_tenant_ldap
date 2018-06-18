@@ -16,9 +16,9 @@ In addition, it adds and removes existing users into the above groups if require
     local_admin_pwd: '<<admin_pwd>>'
     tenant_name: 'Tenant_A'
     projects:
-    - name: 'DEV'
-    - name: 'TEST'
-    - name: 'DEMO'
+        - name: 'DEV'
+        - name: 'TEST'
+        - name: 'DEMO'
   include_role: 
     name: ocp_manage_tenant_ldap_users
     tasks_from: create_groups
@@ -42,9 +42,9 @@ for example:
     local_admin_pwd: '<<admin_pwd>>'
     tenant_name: 'Tenant_A'
     projects:
-    - name: 'DEV'
-    - name: 'TEST'
-    - name: 'DEMO'
+        - name: 'DEV'
+        - name: 'TEST'
+        - name: 'DEMO'
   include_role: 
     name: ocp_manage_tenant_ldap_users
     tasks_from: delete_groups
