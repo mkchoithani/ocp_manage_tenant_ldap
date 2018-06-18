@@ -4,13 +4,13 @@
     group_name: "{{ tenant_name|lower|replace('_', '-') }}-{{ item.0.name|lower|replace('_', '-') }}-admin"
     user: "{{ item.1 }} "
   ldap_attr:
-     dn: CN={{ group_name }},{{ group_dn }}
+     dn: "CN={{ group_name }},{{ group_dn }}"
      name: member
-     values: CN={{ user }},{{ user_dn }}
+     values: "CN={{ user }},{{ user_dn }}"
      state: exact
-     server_uri: {{ ldap_server_uri }}
-     bind_dn: {{ local_admin_dn }}
-     bind_pw: {{ local_admin_pwd }}
+     server_uri: "{{ ldap_server_uri }}"
+     bind_dn: "{{ local_admin_dn }}"
+     bind_pw: "{{ local_admin_pwd }}"
   with_subelements:
     - "{{ projects }}"
     - admins
@@ -21,13 +21,13 @@
     group_name: "{{ tenant_name|lower|replace('_', '-') }}-{{ item.0.name|lower|replace('_', '-') }}"
     user: "{{ item.1 }} "
   ldap_attr:
-     dn: CN={{ group_name }},{{ group_dn }}
+     dn: "CN={{ group_name }},{{ group_dn }}"
      name: member
-     values: CN={{ user }},{{ user_dn }}
+     values: "CN={{ user }},{{ user_dn }}"
      state: exact
-     server_uri: {{ ldap_server_uri }}
-     bind_dn: {{ local_admin_dn }}
-     bind_pw: {{ local_admin_pwd }}
+     server_uri: "{{ ldap_server_uri }}"
+     bind_dn: "{{ local_admin_dn }}"
+     bind_pw: "{{ local_admin_pwd }}"
   with_subelements:
     - "{{ projects }}"
     - users

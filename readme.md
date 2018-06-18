@@ -70,9 +70,9 @@ for example:
              - dev1@acme.com
              - dev2@acme.com
          - name: 'TEST'
-             admins:
-               - testAdmin@acme.com
-             users:
+           admins:
+             - testAdmin@acme.com
+           users:
                - tester1@acme.com
                - tester2@acme.com
          - name: 'DEMO'
