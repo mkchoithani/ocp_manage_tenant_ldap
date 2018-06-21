@@ -1,8 +1,8 @@
-# ocp_manage_tenant_ldap_users
+# ocp_manage_tenant_ldap
 
-Creates and deletes groups in an LDAP server which follow the naming convention for OCP Tenant spaces.
+Creates and deletes groups in an LDAP compliant directory server which follow the naming convention for OCP Tenant spaces.
 
-In addition, it adds and removes existing users into the above groups if required.
+In addition, it can add and remove existing users into the above groups if required.
 
 ## Creating Tenant Groups example
 
@@ -20,7 +20,7 @@ In addition, it adds and removes existing users into the above groups if require
         - name: 'TEST'
         - name: 'DEMO'
   include_role: 
-    name: ocp_manage_tenant_ldap_users
+    name: ocp_manage_tenant_ldap
     tasks_from: create_groups
 ```
 
@@ -46,7 +46,7 @@ for example:
         - name: 'TEST'
         - name: 'DEMO'
   include_role: 
-    name: ocp_manage_tenant_ldap_users
+    name: ocp_manage_tenant_ldap
     tasks_from: delete_groups
 ```
 
@@ -82,7 +82,7 @@ for example:
                - demo1@acme.com
                - demo2@acme.com
      include_role: 
-       name: ocp_manage_tenant_ldap_users
+       name: ocp_manage_tenant_ldap
        tasks_from: add_users_to_groups
    ```
    
@@ -117,6 +117,6 @@ for example:
             - demo1@acme.com
             - demo2@acme.com
   include_role: 
-    name: ocp_manage_tenant_ldap_users
+    name: ocp_manage_tenant_ldap
     tasks_from: remove_users_from_groups
 ```
